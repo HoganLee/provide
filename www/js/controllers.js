@@ -27,18 +27,31 @@ angular.module('starter.controllers', ['ionic'])
   };
 })
 
-.controller('MapCtrl', function($scope) {
-    
+.controller('MapCtrl', function($scope, $cordovaGeolocation) {
+    var posOptions = {timeout: 20000, enableHighAccuracy: false};
+    $cordovaGeolocation.getCurrentPosition(posOptions)
+    .then(function (position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        var myLatLng = new google.maps.LatLng(lat, lng),
+            mapOptions = {
+                zoom: 16,
+                center: myLatLng
+            },
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }, function(err) {
+        // error
+    });
 })
 
-.directive('map', function() {
+/*.directive('map', function() {
     return {
         restrict: 'A',
         link:function(scope, element, attrs){
 
-          var zValue = scope.$eval(attrs.zoom);
-          var lat = scope.$eval(attrs.lat);
-          var lng = scope.$eval(attrs.lng);
+          var zValue = 8;
+          var lat = scope.myLat;
+          var lng = scope.myLong;
           var myLatlng = new google.maps.LatLng(lat,lng),
             mapOptions = {
                 zoom: zValue,
@@ -47,4 +60,4 @@ angular.module('starter.controllers', ['ionic'])
             map = new google.maps.Map(element[0],mapOptions);
         }
     };
-});
+})*/;
