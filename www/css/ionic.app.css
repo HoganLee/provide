@@ -9116,6 +9116,13 @@ a.button {
   text-align: center;
   margin-bottom: 20px; }
 
+.fadein {
+  transition: opacity 0.6s;
+  opacity: 1; }
+  .fadein.ng-hide {
+    transition: none;
+    opacity: 0; }
+
 .categories.list .item {
   width: 50%;
   float: left;

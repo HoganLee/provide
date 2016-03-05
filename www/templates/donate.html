@@ -7,7 +7,6 @@
               ng-repeat="category in categories"
               ng-model="category.selected"
               ng-value="category.value"
-              ng-change="selectedCategoriesChanged(category, selectedCategories)"
               ng-class="{checked: category.selected}">
 
               <img src="img/icons/{{category.icon}}" /><br />
