@@ -5,8 +5,69 @@ angular.module('app.controllers', ['app.services'])
         })
 
 .controller('donateCtrl', function($scope) {
-
-        })
+  $scope.categories = [
+    {
+      icon: 'icon-pasta.png',
+      title: 'Pasta <small>(canned or dry) <br />and pasta sauces</small>',
+      value: 'pasta',
+      selected: false
+    },
+    {
+      icon: 'icon-canned-meat-fish.png',
+      title: 'Canned and frozen <br />meats and fish',
+      value: 'canned-meat-fish',
+      selected: false
+    },
+    {
+      icon: 'icon-meat-alternatives.png',
+      title: 'Meat alternatives <br /><small>(peanut butter, soy, <br />assorted nuts)</small>',
+      value: 'meat-alternatives',
+      selected: false
+    },
+    {
+      icon: 'icon-canned-goods.png',
+      title: 'Canned goods <br /><small>(beans, soups, and <br />stews)</small>',
+      value: 'canned-goods',
+      selected: false
+    },
+    {
+      icon: 'icon-dairy.png',
+      title: 'Dairy <br /><small>(fresh, canned, and <br />powdered milk)</small>',
+      value: 'dairy',
+      selected: false
+    },
+    {
+      icon: 'icon-canned-vegetables-fruit.png',
+      title: 'Canned vegetables <br />and fruit<br />&nbsp;',
+      value: 'canned-vegetables-fruit',
+      selected: false
+    },
+    {
+      icon: 'icon-cereals.png',
+      title: 'Whole grain cereals<br />&nbsp;',
+      value: 'cereals',
+      selected: false
+    },
+    {
+      icon: 'icon-baby-food.png',
+      title: 'Infant foods and <br />baby formula',
+      value: 'baby-food',
+      selected: false
+    },
+    {
+      icon: 'icon-bathroom-tissue.png',
+      title: 'Bathroom tissue <br />and diapers',
+      value: 'bathroom-tissue',
+      selected: false
+    },
+    {
+      icon: 'icon-personal-hygiene.png',
+      title: 'Personal hygiene <br />products',
+      value: 'personal-hygiene',
+      selected: false
+    }
+  ];
+})
 
 .controller('donationDetailsCtrl', function($scope) {
 
@@ -54,7 +115,7 @@ angular.module('app.controllers', ['app.services'])
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-            }); 
+            });
         })
 })
 
