@@ -1,28 +1,42 @@
-angular.module('starter.controllers', [])
+angular.module('app.controllers', [])
+  
+.controller('homeCtrl', function($scope) {
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
 })
+   
+.controller('donateCtrl', function($scope) {
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
 })
+   
+.controller('donationDetailsCtrl', function($scope) {
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+})
+   
+.controller('deliverDonationsCtrl', function($scope) {
+
+})
+   
+.controller('deliveryRequestsCtrl', function($scope) {
+
+})
+   
+.controller('pendingDeliveresCtrl', function($scope) {
+
+})
+   
+.controller('donationDeliveryCtrl', function($scope) {
+
+})
+   
+.controller('notesCtrl', function($scope) {
+
+})
+   
+.controller('congratulationsCtrl', function($scope) {
+
+})
+   
+.controller('congratulations2Ctrl', function($scope) {
+
+})
+ 
