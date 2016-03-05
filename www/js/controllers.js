@@ -28,6 +28,17 @@ angular.module('app.controllers', [])
                 center: myLatLng
             },
             map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var infoWindow = new google.maps.InfoWindow({
+            content: "<div>text <b>goes</b> here</div>"
+        });
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: "Me"
+        });
+        marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+        });
     }, function(err) {
         // error
     });
