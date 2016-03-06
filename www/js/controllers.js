@@ -31,6 +31,7 @@ angular.module('app.controllers', ['app.services'])
             var infoWindow = new google.maps.InfoWindow({
                 content: "<div>text <b>goes</b> here</div>"
             });
+            
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
@@ -54,7 +55,7 @@ angular.module('app.controllers', ['app.services'])
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-            });
+            }); 
         })
 })
 
