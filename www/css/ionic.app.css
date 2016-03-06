@@ -9197,7 +9197,7 @@ a.button {
   padding: 10px; }
 
 .map-container.map-pendings .map-header {
-  height: 50px; }
+  height: 43px; }
 
 .map-container .map {
   position: absolute !important;
@@ -9208,7 +9208,7 @@ a.button {
   z-index: 101; }
 
 .map-container.map-pendings .map {
-  top: 60px; }
+  top: 53px; }
 
 .map-container .map-footer {
   position: absolute;
