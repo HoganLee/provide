@@ -5,21 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic',
+angular.module('app', ['ionic','ionic.service.core',
                        'app.controllers',
                        'app.routes',
                        'app.services',
                        'app.directives',
-                       'ngCordova',
-                       'ionic.service.push'
+                       'ngCordova'
 ])
-.config(['$ionicAppProvider', function($ionicAppProvider) {
-  $ionicAppProvider.identify({
-    app_id: '6604d6d0',
-    api_key: '687b2bf923a38b4b5941b9516a81ffc1cdeb3bb0fdc6f7e5',
-    dev_push: true
-  });
-}])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,10 +24,17 @@ angular.module('app', ['ionic',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+      var push = new Ionic.Push({
+        "debug": true
+      });
+
+      push.register(function(token) {
+        console.log("Device token:",token.token);
+      });
   });
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, $state) {
   $rootScope.donate = {};
   $rootScope.volunteer = {};
   $rootScope.donate.dateSelected = false;
@@ -102,5 +101,12 @@ angular.module('app', ['ionic',
     }
   ];
   $rootScope.donate.needDelivery = false;
-  $rootScope.volunteer.dateSelected = false;
+  $rootScope.volunteer.dateSelected = true;
+  $rootScope.makeApiRequest = function(destinationRoute) {
+    $rootScope.loading = true;
+    setTimeout( function() {
+      $state.go(destinationRoute);
+      $rootScope.loading = false;
+    }, 1000 );
+  }
 })

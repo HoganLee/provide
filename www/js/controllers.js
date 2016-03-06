@@ -1,8 +1,8 @@
-angular.module('app.controllers', ['app.services','ionic.service.push'])
+angular.module('app.controllers', ['app.services'])
 
 .controller('homeCtrl', function($scope) {
 
-        })
+})
 
 .controller('donateCtrl', function($scope, $rootScope) {
 
@@ -16,7 +16,8 @@ angular.module('app.controllers', ['app.services','ionic.service.push'])
 
         })
 
-.controller('deliveryRequestsCtrl', function($scope, $cordovaGeolocation, PickupPoints, $rootScope, $ionicUser, $ionicPush) {
+.controller('deliveryRequestsCtrl', function($scope, $cordovaGeolocation, PickupPoints) {
+
         var posOptions = {timeout: 20000, enableHighAccuracy: false};
         $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {
@@ -79,25 +80,19 @@ angular.module('app.controllers', ['app.services','ionic.service.push'])
 
 .controller('pendingDeliveresCtrl', function($scope) {
 
-        })
+})
 
 .controller('donationDeliveryCtrl', function($scope) {
 })
 
-.controller('notesCtrl', function($scope, $rootScope, $state) {
-  $scope.makeApiRequest = function() {
-    $rootScope.loading = true;
-    setTimeout( function() {
-      $state.go('congratulations');
-      $rootScope.loading = false;
-    }, 1000 );
-  }
+.controller('notesCtrl', function($scope) {
+
 })
 
 .controller('congratulationsCtrl', function($scope, $rootScope) {
   $rootScope.donate.dateSelected = false;
 })
 
-.controller('congratulations2Ctrl', function($scope) {
+.controller('congratulations2Ctrl', function($scope, $rootScope) {
   $rootScope.volunteer.dateSelected = false;
 })

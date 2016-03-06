@@ -10,24 +10,23 @@
                 <span class="input-label">Address</span>
                 <select>
                     <option>NOT SELECTED</option>
-                    <option>1234 Elbow Dr. SW Calgary Alberta T2V 4N7</option>
+                    <option selected>1234 Elbow Dr. SW Calgary Alberta T2V 4N7</option>
                     <option>New Address</option>
                 </select>
             </label>
             <label class="item item-input" name="delivery-phone">
                 <span class="input-label">Phone</span>
-                <input type="tel" placeholder="(123) 456-7890">
+                <input type="tel" placeholder="(123) 456-7890" value="(403) 587-1842">
             </label>
-            <label class="item item-select" name="delivery-date">
-                <span class="input-label">Date</span>
-                <select></select>
-            </label>
-            <ion-item class="range range-positive">Between
-                <input type="range" value="1000" min="700" max="2000" name="delivery-time-from">
-            </ion-item>
-            <ion-item class="range range-positive">And
-                <input type="range" value="1000" min="700" max="2000" name="delivery-time-to">
-            </ion-item>
+            <div style="margin-top: 16px;">
+                  <img src="img/calendar{{volunteer.dateSelected ? '-active' : ''}}.png" width="100%" height="auto" ng-click="volunteer.dateSelected = ! volunteer.dateSelected" />
+              </div>
+              <label class="item">
+                  Between
+                  <img width="auto" height="40" style="vertical-align: middle; margin: 0 5px" src="img/time-from.png" />
+                  and
+                  <img width="auto" height="40" style="vertical-align: middle; margin: 0 5px" src="img/time-to.png" />
+              </label>
             <a ui-sref="deliveryRequests" class="button button-calm button-block button-large icon-right ion-ios-arrow-forward button-full">Next</a>
         </form>
     </ion-content>
