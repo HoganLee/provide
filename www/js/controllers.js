@@ -80,6 +80,6 @@ angular.module('app.controllers', ['app.services','ionic.service.push'])
   $rootScope.donate.dateSelected = false;
 })
 
-.controller('congratulations2Ctrl', function($scope) {
+.controller('congratulations2Ctrl', function($scope, $rootScope) {
   $rootScope.volunteer.dateSelected = false;
 })
