@@ -62,25 +62,19 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('pendingDeliveresCtrl', function($scope) {
 
-        })
+})
 
 .controller('donationDeliveryCtrl', function($scope) {
 })
 
-.controller('notesCtrl', function($scope, $rootScope, $state) {
-  $scope.makeApiRequest = function() {
-    $rootScope.loading = true;
-    setTimeout( function() {
-      $state.go('congratulations');
-      $rootScope.loading = false;
-    }, 1000 );
-  }
+.controller('notesCtrl', function($scope) {
+
 })
 
 .controller('congratulationsCtrl', function($scope, $rootScope) {
   $rootScope.donate.dateSelected = false;
 })
 
-.controller('congratulations2Ctrl', function($scope) {
+.controller('congratulations2Ctrl', function($scope, $rootScope) {
   $rootScope.volunteer.dateSelected = false;
 })

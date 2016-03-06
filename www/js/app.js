@@ -34,7 +34,7 @@ angular.module('app', ['ionic','ionic.service.core',
   });
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, $state) {
   $rootScope.donate = {};
   $rootScope.volunteer = {};
   $rootScope.donate.dateSelected = false;
@@ -102,4 +102,11 @@ angular.module('app', ['ionic','ionic.service.core',
   ];
   $rootScope.donate.needDelivery = false;
   $rootScope.volunteer.dateSelected = false;
+  $rootScope.makeApiRequest = function(destinationRoute) {
+    $rootScope.loading = true;
+    setTimeout( function() {
+      $state.go(destinationRoute);
+      $rootScope.loading = false;
+    }, 1000 );
+  }
 })
