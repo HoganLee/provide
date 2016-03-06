@@ -9162,6 +9162,9 @@ a.button {
   .spinner-container svg {
     transform: scale(1.5); }
 
+.platform-android .spinner-container {
+  background: rgba(255, 255, 255, 0.15); }
+
 .categories.list .item {
   width: 50%;
   float: left;
