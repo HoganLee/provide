@@ -61,19 +61,13 @@ angular.module('app.controllers', ['app.services','ionic.service.push'])
 
 .controller('pendingDeliveresCtrl', function($scope) {
 
-        })
+})
 
 .controller('donationDeliveryCtrl', function($scope) {
 })
 
-.controller('notesCtrl', function($scope, $rootScope, $state) {
-  $scope.makeApiRequest = function() {
-    $rootScope.loading = true;
-    setTimeout( function() {
-      $state.go('congratulations');
-      $rootScope.loading = false;
-    }, 1000 );
-  }
+.controller('notesCtrl', function($scope) {
+
 })
 
 .controller('congratulationsCtrl', function($scope, $rootScope) {
