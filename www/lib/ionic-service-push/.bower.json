@@ -27,5 +27,6 @@
   },
   "_source": "git://github.com/driftyco/ionic-service-push-client.git",
   "_target": "^0.1.13",
-  "_originalSource": "ionic-service-push"
+  "_originalSource": "ionic-service-push",
+  "_direct": true
 }

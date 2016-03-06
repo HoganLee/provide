@@ -17,11 +17,12 @@ angular.module('app.controllers', ['app.services'])
         })
 
 .controller('deliveryRequestsCtrl', function($rootScope, $scope, $cordovaGeolocation, PickupPoints) {
-	$rootScope.loadMap($scope, $cordovaGeolocation, PickupPoints);
+	$rootScope.loadMap($scope, $cordovaGeolocation, PickupPoints, "map");
 })
 
 .controller('pendingDeliveresCtrl', function($rootScope, $scope, $cordovaGeolocation, PickupPoints) {
-	$rootScope.loadMap($scope, $cordovaGeolocation, PickupPoints);
+        console.log("here");
+	$rootScope.loadMap($scope, $cordovaGeolocation, PickupPoints, "map2");
 })
 
 .controller('donationDeliveryCtrl', function($scope) {

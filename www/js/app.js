@@ -109,10 +109,11 @@ angular.module('app', ['ionic','ionic.service.core',
       $rootScope.loading = false;
     }, 1000 );
   }
-  $rootScope.loadMap= function($scope, $cordovaGeolocation, PickupPoints) {
+  $rootScope.loadMap= function($scope, $cordovaGeolocation, PickupPoints, mapID) {
         var posOptions = {timeout: 20000, enableHighAccuracy: false};
         $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {
+            console.log("test");
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
             var myLatLng = new google.maps.LatLng(lat, lng),
@@ -120,7 +121,8 @@ angular.module('app', ['ionic','ionic.service.core',
                 zoom: 16,
                 center: myLatLng
             },
-            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            map = new google.maps.Map(document.getElementById(mapID), mapOptions);
+            console.log(map);
             var infoWindow = new google.maps.InfoWindow({
                 content: "<div>text <b>goes</b> here</div>"
             });
