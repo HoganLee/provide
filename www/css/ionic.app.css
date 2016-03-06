@@ -9123,6 +9123,43 @@ a.button {
     transition: none;
     opacity: 0; }
 
+.pane[nav-view="entering"] .star-animation {
+  transform: scale(0);
+  transition: none; }
+
+.pane[nav-view="leaving"] .star-animation {
+  transition: none; }
+
+.star-animation {
+  transform: scale(1.4);
+  transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  width: 50%;
+  margin: 40px auto 20px;
+  animation: animatedStar 3s ease infinite;
+  animation-delay: 2.0s; }
+
+@keyframes animatedStar {
+  50% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1.4); } }
+
+.spinner-container {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding-top: 60px; }
+  .spinner-container svg {
+    transform: scale(1.5); }
+
 .categories.list .item {
   width: 50%;
   float: left;

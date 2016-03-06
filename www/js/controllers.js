@@ -68,9 +68,15 @@ angular.module('app.controllers', ['app.services'])
   }
 })
 
-.controller('notesCtrl', function($scope) {
-
-        })
+.controller('notesCtrl', function($scope, $rootScope, $state) {
+  $scope.makeApiRequest = function() {
+    $rootScope.loading = true;
+    setTimeout( function() {
+      $state.go('congratulations');
+      $rootScope.loading = false;
+    }, 1000 );
+  }
+})
 
 .controller('congratulationsCtrl', function($scope) {
 
