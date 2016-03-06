@@ -31,6 +31,7 @@ angular.module('app.controllers', ['app.services'])
             var infoWindow = new google.maps.InfoWindow({
                 content: "<div>text <b>goes</b> here</div>"
             });
+            
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
@@ -55,6 +56,10 @@ angular.module('app.controllers', ['app.services'])
                     window.alert('Directions request failed due to ' + status);
                 }
             }); 
+            /*var ctaLayer = new google.maps.KmlLayer({
+                url: 'https://data.calgary.ca/_layouts/OpenData/DownloadDataset.ashx?DatasetID=PDC0-99999-99999-00004-P(CITYonlineDefault)&VariantID=2(CITYonlineDefault)',
+                map: map
+            });*/
         })
 })
 
