@@ -9114,7 +9114,32 @@ a.button {
 
 .logo {
   text-align: center;
-  margin-bottom: 100px; }
+  margin-bottom: 20px; }
+
+.fadein {
+  transition: opacity 0.6s;
+  opacity: 1; }
+  .fadein.ng-hide {
+    transition: none;
+    opacity: 0; }
+
+.categories.list .item {
+  width: 50%;
+  float: left;
+  padding: 16px;
+  text-align: center;
+  background-color: #efefef; }
+  .categories.list .item.checked {
+    background-color: #4D9552;
+    color: white; }
+  .categories.list .item .checkbox {
+    display: none; }
+  .categories.list .item:nth-child(2n+1) {
+    clear: left; }
+
+.categories.list .button {
+  margin-top: 10px;
+  clear: both; }
 
 #map {
   width: 100%;

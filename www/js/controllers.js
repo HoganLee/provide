@@ -4,9 +4,9 @@ angular.module('app.controllers', ['app.services'])
 
         })
 
-.controller('donateCtrl', function($scope) {
+.controller('donateCtrl', function($scope, $rootScope) {
 
-        })
+})
 
 .controller('donationDetailsCtrl', function($scope) {
 
@@ -56,10 +56,6 @@ angular.module('app.controllers', ['app.services'])
                     window.alert('Directions request failed due to ' + status);
                 }
             }); 
-            /*var ctaLayer = new google.maps.KmlLayer({
-                url: 'https://data.calgary.ca/_layouts/OpenData/DownloadDataset.ashx?DatasetID=PDC0-99999-99999-00004-P(CITYonlineDefault)&VariantID=2(CITYonlineDefault)',
-                map: map
-            });*/
         })
 })
 
@@ -67,9 +63,11 @@ angular.module('app.controllers', ['app.services'])
 
         })
 
-.controller('donationDeliveryCtrl', function($scope) {
-
-        })
+.controller('donationDeliveryCtrl', function($scope, $rootScope) {
+  if ( ! $rootScope.hasOwnProperty('needDelivery') ) {
+    $rootScope.needDelivery = true;
+  }
+})
 
 .controller('notesCtrl', function($scope) {
 
