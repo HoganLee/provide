@@ -79,4 +79,7 @@
 .platform-android .spinner-container {
   background: rgba(255,255,255,0.15);
 }
+.platform-android .bar-header .button:not(.hide) + .title {
+  padding-left: 20px;
+}
 
