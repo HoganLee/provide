@@ -1,8 +1,8 @@
-angular.module('app.controllers', ['app.services','ionic.service.push'])
+angular.module('app.controllers', ['app.services'])
 
 .controller('homeCtrl', function($scope) {
 
-        })
+})
 
 .controller('donateCtrl', function($scope, $rootScope) {
 
@@ -16,7 +16,8 @@ angular.module('app.controllers', ['app.services','ionic.service.push'])
 
         })
 
-.controller('deliveryRequestsCtrl', function($scope, $cordovaGeolocation, PickupPoints, $rootScope, $ionicUser, $ionicPush) {
+.controller('deliveryRequestsCtrl', function($scope, $cordovaGeolocation, PickupPoints) {
+
         var posOptions = {timeout: 20000, enableHighAccuracy: false};
         $cordovaGeolocation.getCurrentPosition(posOptions)
         .then(function (position) {

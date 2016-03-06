@@ -7,11 +7,13 @@
 
 <!--    <link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="lib/angular-websocket/angular-websocket.js"></script>
     <script src="js/ng-cordova.min.js"></script>
-    <script src="cordova.js"></script>
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
     <script src="lib/ionic-service-core/ionic-core.js"></script>
     <script src="lib/ionic-service-push/ionic-push.js"></script>
 
@@ -31,7 +33,7 @@
     -->
 
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
+  <body platform-ios="" ng-app="app" animation="slide-left-right-ios7">
   <div>
     <div>
         <ion-nav-bar class="bar-stable">
