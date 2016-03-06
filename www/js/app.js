@@ -24,6 +24,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 .run(function($rootScope) {
   $rootScope.donate = {};
   $rootScope.volunteer = {};
+  $rootScope.donate.dateSelected = false;
   $rootScope.donate.categories = [
     {
       icon: 'icon-pasta.png',
@@ -87,4 +88,5 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   ];
   $rootScope.donate.needDelivery = false;
+  $rootScope.volunteer.dateSelected = false;
 })
