@@ -1,13 +1,20 @@
 <ion-view title="Delivery Requests">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form class="list">
-            <div>
-                <p>Which donations will you be able to deliver? Press Next after you mark all of them.</p>
+        <form class="">
+            <div class="map-container">
+                <div class="spinner-container"><ion-spinner></ion-spinner></div>
 
-                <div id="map"></div>
+                <div class="map-header">
+                  <p>Which donations will you be able to deliver? Press Next after you mark all of them.</p>
+                  <p id="duration"></p>
+                </div>
+
+                <div id="map" class="map"></div>
+
+                <div class="map-footer">
+                  <a ui-sref="pendingDeliveres" class="button button-calm button-block button-large icon-right ion-ios-arrow-forward button-full">Next</a>
+                </div>
             </div>
-            <ion-list></ion-list>
-            <a ui-sref="pendingDeliveres" class="button button-calm button-block button-large icon-right ion-ios-arrow-forward button-full">Next</a>
         </form>
     </ion-content>
 </ion-view>
