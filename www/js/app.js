@@ -101,7 +101,7 @@ angular.module('app', ['ionic','ionic.service.core',
     }
   ];
   $rootScope.donate.needDelivery = false;
-  $rootScope.volunteer.dateSelected = false;
+  $rootScope.volunteer.dateSelected = true;
   $rootScope.makeApiRequest = function(destinationRoute) {
     $rootScope.loading = true;
     setTimeout( function() {
