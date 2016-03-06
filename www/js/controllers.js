@@ -51,7 +51,25 @@ angular.module('app.controllers', ['app.services','ionic.service.push'])
                 optimizeWaypoints: true
             }, function(response, status) {
                 if (status === google.maps.DirectionsStatus.OK) {
+                    var total_time = 0;
+                    var pp = [];
+                    for(var i=0; i<response.routes.length; i++) {
+//                        console.log(JSON.stringify(response.routes[i].legs[0].end_location, null, 4));
+                        for(var j = 0; j < response.routes[i].legs.length; j++) {
+                            total_time += response.routes[i].legs[j].duration.value;
+                            pp.push(JSON.stringify(response.routes[i].legs[j].end_location));
+                            console.log(JSON.stringify(response.routes[i].legs[j].end_location));
+                        }
+                    }
+                    console.log("total time is");
+                    console.log(total_time/60);
+                    document.getElementById("duration").innerHTML = "It takes " + (total_time/60) + " minutes to pick up all items.";
                     directionsDisplay.setDirections(response);
+                    var url = "http://maps.google.com/maps?" + "saddr=" + lat + "," + lng + "&daddr=";
+                    for(var i = 0; i < pp.length-1; i++)
+                        url += pp[i].replace("{","").replace("}","").replace("\"lat\":", "").replace("\"lng\":", "") + "+to:";
+                    url += PickupPoints.getDestination();
+                    document.getElementById("mapApp").setAttribute('href', url);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
