@@ -17,24 +17,15 @@
               <div>
                   <p>When should we pick-up the items from your address?</p>
               </div>
-              <label class="item item-select" name="pickup-date">
-                  <span class="input-label">Date</span>
-                  <select>
-                      <option>Tomorrow, March 7, 2016</option>
-                      <option>Tuesday, March 8, 2016</option>
-                      <option>Wednesday, March 9, 2016</option>
-                      <option>Thursday, March 10, 2016</option>
-                      <option>Friday, March 11, 2016</option>
-                      <option>Saturday, March 12, 2016</option>
-                      <option>Sunday, March 13, 2016</option>
-                  </select>
+              <div>
+                  <img src="img/donation-calendar{{donate.dateSelected ? '-active' : ''}}.png" width="100%" height="auto" ng-click="donate.dateSelected = ! donate.dateSelected" />
+              </div>
+              <label class="item">
+                  Between
+                  <img width="auto" height="40" style="vertical-align: middle; margin: 0 5px" src="img/time-from.png" />
+                  and
+                  <img width="auto" height="40" style="vertical-align: middle; margin: 0 5px" src="img/time-to.png" />
               </label>
-              <ion-item class="range range-positive">Between
-                  <input type="range" value="1000" min="0700" max="2000" name="pickup-time-from">
-              </ion-item>
-              <ion-item class="range range-positive">And
-                  <input type="range" value="1000" min="0700" max="2000" name="pickup-time-to">
-              </ion-item>
               <a ui-sref="notes" class="button button-balanced button-block button-large icon-right ion-ios-arrow-forward button-full">Next</a>
             </div>
         </form>

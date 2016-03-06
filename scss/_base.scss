@@ -27,12 +27,14 @@
 }
 
 .fadein {
-  transition: opacity 0.6s;
+  transition: opacity 0.6s, margin-top 0.6s;
   opacity: 1;
+  margin-top: 0;
 
   &.ng-hide {
     transition: none;
     opacity: 0;
+    margin-top: 50px;
   }
 }
 

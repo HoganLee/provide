@@ -31,7 +31,7 @@ angular.module('app.controllers', ['app.services'])
             var infoWindow = new google.maps.InfoWindow({
                 content: "<div>text <b>goes</b> here</div>"
             });
-            
+
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
@@ -55,7 +55,7 @@ angular.module('app.controllers', ['app.services'])
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-            }); 
+            });
         })
 })
 
@@ -63,10 +63,7 @@ angular.module('app.controllers', ['app.services'])
 
         })
 
-.controller('donationDeliveryCtrl', function($scope, $rootScope) {
-  if ( ! $rootScope.hasOwnProperty('needDelivery') ) {
-    $rootScope.needDelivery = true;
-  }
+.controller('donationDeliveryCtrl', function($scope) {
 })
 
 .controller('notesCtrl', function($scope, $rootScope, $state) {
@@ -79,10 +76,10 @@ angular.module('app.controllers', ['app.services'])
   }
 })
 
-.controller('congratulationsCtrl', function($scope) {
-
-        })
+.controller('congratulationsCtrl', function($scope, $rootScope) {
+  $rootScope.donate.dateSelected = false;
+})
 
 .controller('congratulations2Ctrl', function($scope) {
-
-        })
+  $rootScope.volunteer.dateSelected = false;
+})

@@ -1,17 +1,23 @@
-<ion-view title="Congratulations!">
+<ion-view title="Congratulations!" hide-back-button="true">
+  <ion-nav-buttons side="right">
+      <a class="button next-button buttons button-icon icon ion-ios-arrow-next header-item" ui-sref="home">Home</a>
+    </ion-nav-buttons>
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div>
-            <p>You just did 6 donation deliveries, which brings your total to 85!</p>
+        <div style="text-align: center;">
+            <p>You just did 6 donation deliveries, <br />which brings your total to 85!</p>
         </div>
-        <div style="text-align:center;">
-            <img src="img/pvWtMb7TJedRoFUGNtGz_star_PNG1592.png" width="50%" height="auto">
+        <div class="star-animation">
+            <img src="img/star.png" width="100%" height="auto">
         </div>
-        <div>
-            <h2>LEVEL UP</h2>
+        <div style="text-align: center">
+            <h4>LEVEL UP</h4>
 
-            <p>
-                <strong>Community Star</strong>
-            </p>
+            <h1>Community Legend</h1>
+
+            <div class="social-share clearfix" style="margin-top: 45px;">
+              <h4>Share this achievement with your friends!</h4>
+              <img src="img/icons/social.png" width="100%" height="auto" />
+            </div>
         </div>
     </ion-content>
 </ion-view>
